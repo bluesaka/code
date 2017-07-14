@@ -1,4 +1,4 @@
-* ## 数据库数据导入es
+# 数据库数据导入es
 
     ```php
     $teachers = M('teachers')->limit(0,500)->select();
@@ -24,7 +24,7 @@
     curl_close($ch);
     ```
 
-* ## 查询状态(1,3,4)的老师
+# 查询状态(1,3,4)的老师
 
 ```
 curl -XGET 'localhost:9200/es/teachers/_search?pretty' -d'
@@ -62,15 +62,14 @@ foreach ($ret as $v) {
 dump($ids);
 ```
 
-* ## 模糊匹配
+# 模糊匹配
 
-    ```
-    // match匹配单词，默认不区分大小写
-    {
-        "query": {
-            "match": {"intro": "hello NaMe adam"}
-       }
-    }
-
-    ```
+```
+// match匹配单词，默认不区分大小写
+{
+    "query": {
+        "match": {"intro": "hello NaMe adam"}
+   }
+}
+```
 
