@@ -62,6 +62,7 @@
 
 * [DI依赖注入](https://github.com/bluesaka/code/blob/master/php/DI/test.php)
 * [Ioc控制反转容器](https://github.com/bluesaka/code/blob/master/php/DI/test2.php)
+* [composer](https://github.com/bluesaka/code/blob/master/php/base/composer.md)
 * 基础
     - [数据类型](http://php.net/manual/zh/language.types.php)
     - [array函数](http://php.net/manual/zh/ref.array.php)
