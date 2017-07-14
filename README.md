@@ -55,3 +55,7 @@
     - [计数](https://github.com/bluesaka/code/blob/master/redis/counter/test.php)
     - [显示最新的数据](https://github.com/bluesaka/code/blob/master/redis/latest/test.php)
     - [锁](https://github.com/bluesaka/code/blob/master/redis/lock/curl.php)
+
+* python
+
+    - [数据挖掘](https://github.com/bluesaka/code/blob/master/python/data.md)
