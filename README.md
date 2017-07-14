@@ -87,3 +87,12 @@
 
 * [基础](https://github.com/bluesaka/code/blob/master/mysql/base.md)
 * [优化](https://github.com/bluesaka/code/blob/master/mysql/optimize.md)
+
+--------------------------------
+
+# Linux
+
+* [基础命令](https://github.com/bluesaka/code/blob/master/linux/command.md)
+* [权限](https://github.com/bluesaka/code/blob/master/linux/permission.md)
+* [ssh key](https://github.com/bluesaka/code/blob/master/linux/ssh_key.md)
+* [mount挂载](https://github.com/bluesaka/code/blob/master/linux/mount.md)
