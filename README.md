@@ -56,6 +56,15 @@
     - [显示最新的数据](https://github.com/bluesaka/code/blob/master/redis/latest/test.php)
     - [锁](https://github.com/bluesaka/code/blob/master/redis/lock/curl.php)
 
-# python
+--------------------------------
+
+# PHP
+
+* [DI依赖注入](https://github.com/bluesaka/code/blob/master/php/DI/test.php)
+* [Ioc控制反转容器](https://github.com/bluesaka/code/blob/master/php/DI/test2.php)
+
+--------------------------------
+
+# Python
 
 * [数据挖掘](https://github.com/bluesaka/code/blob/master/python/data.md)
