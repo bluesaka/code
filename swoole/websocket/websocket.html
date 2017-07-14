@@ -1,0 +1,20 @@
+<script>
+    var sock = new WebSocket('ws://127.0.0.1:9501');
+
+    sock.onopen = function(event) {
+        sock.send(JSON.stringify('{"type":"login","tid":8301}'));
+    };
+
+    sock.onmessage = function(event) {
+        console.log(event.data)
+    };
+
+    sock.onclose = function(e) {
+        console.log('ws close', e);
+    };
+    sock.onerror = function(err) {
+        console.error('error: ', err.message, 'Closing socket');
+        sock.close();
+    };
+
+</script>
