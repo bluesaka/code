@@ -62,9 +62,27 @@
 
 * [DI依赖注入](https://github.com/bluesaka/code/blob/master/php/DI/test.php)
 * [Ioc控制反转容器](https://github.com/bluesaka/code/blob/master/php/DI/test2.php)
+* 基础
+    - [数据类型](http://php.net/manual/zh/language.types.php)
+    - [array函数](http://php.net/manual/zh/ref.array.php)
+    - [date函数](http://php.net/manual/zh/function.date.php)
+    - [类型比较](http://php.net/manual/zh/types.comparisons.php)
+    - [运算符优先级](http://php.net/manual/zh/language.operators.precedence.php)
+* PHP版本
+    - [7.1](http://php.net/manual/zh/migration71.new-features.php)
+    - [7.0](http://php.net/manual/zh/migration70.new-features.php)
+    - [5.6](http://php.net/manual/zh/migration56.new-features.php)
+    - [5.6升级到7.0](http://php.net/manual/zh/migration70.php)
 
 --------------------------------
 
 # Python
 
 * [数据挖掘](https://github.com/bluesaka/code/blob/master/python/data.md)
+
+--------------------------------
+
+# MySQL
+
+* [基础](https://github.com/bluesaka/code/blob/master/mysql/base.md)
+* [优化](https://github.com/bluesaka/code/blob/master/mysql/optimize.md)
