@@ -62,6 +62,12 @@
 
 * [DI依赖注入](https://github.com/bluesaka/code/blob/master/php/DI/test.php)
 * [Ioc控制反转容器](https://github.com/bluesaka/code/blob/master/php/DI/test2.php)
+* [Session](https://github.com/bluesaka/code/blob/master/php/session)
+    - [file存储](https://github.com/bluesaka/code/blob/master/php/session/session_file.md)
+    - [redis存储](https://github.com/bluesaka/code/blob/master/php/session/test.php)
+    - [redis session](https://github.com/bluesaka/code/blob/master/php/session/test.php)
+    - [session with cookie disabled](https://github.com/bluesaka/code/blob/master/php/session/cookie_disabled.md)
+
 * [composer](https://github.com/bluesaka/code/blob/master/php/base/composer.md)
 * 基础
     - [数据类型](http://php.net/manual/zh/language.types.php)
