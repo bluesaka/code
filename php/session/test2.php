@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * 使用redis存储session
+ */
 require 'RedisSessionHandler.php';
 
 $redis = new Redis();

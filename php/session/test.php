@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * 简单使用redis存储session
+ */
 ini_set('session.gc_maxlifetime', 3600); // 有效期1小时
 ini_set('session.save_handler', 'redis');
 ini_set('session.save_path', 'tcp://127.0.0.1:6379?auth=password');

@@ -17,8 +17,11 @@
 ## 巧妙传递session_id
 
 如果客户端禁用了cookie，可以在url后带上session_id的信息
-> GET  http://www.xxx.com/index.php?session_id=xxx
-> POST http://www.xxx.com/post.php?session_id=xxx
+
+```
+GET  http://www.xxx.com/index.php?session_id=xxx
+POST http://www.xxx.com/post.php?session_id=xxx
+```
 
 然后在脚本开头使用 `session_id($_GET['session_id'])` (在`session_start()`之前)，来强制指定当前的 `session_id`
 

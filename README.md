@@ -65,7 +65,7 @@
 * [Session](https://github.com/bluesaka/code/blob/master/php/session)
     - [file存储](https://github.com/bluesaka/code/blob/master/php/session/session_file.md)
     - [redis存储](https://github.com/bluesaka/code/blob/master/php/session/test.php)
-    - [redis session](https://github.com/bluesaka/code/blob/master/php/session/test.php)
+    - [redis session](https://github.com/bluesaka/code/blob/master/php/session/test2.php)
     - [session with cookie disabled](https://github.com/bluesaka/code/blob/master/php/session/cookie_disabled.md)
 
 * [composer](https://github.com/bluesaka/code/blob/master/php/base/composer.md)
