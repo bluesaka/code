@@ -15,6 +15,7 @@ $redis->zAdd('zSet_users', 78, 'u5', 80, 'u6');
 
 $users = $redis->zRangeByScore('zSet_users', 80, 100, ['withscores' => 1, 'limit'=> [0,10]]); // score[80-100] 正序
 $rev_users = $redis->zRevRangeByScore('zSet_users', 100, 80, ['withscores' => 1, 'limit'=> [0,10]]); // score[100-80] 倒序
+$rank_users = $redis->zRevRange('zSet_users', 0, 9, true); // top 10 with score
 
 $count = $redis->zCount('zSet_users', 80, 100);
 $card = $redis->zCard('zSet_users'); // all count zSize(key)
