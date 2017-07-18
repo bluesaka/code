@@ -61,20 +61,24 @@
 # PHP
 
 * [DI依赖注入](https://github.com/bluesaka/code/blob/master/php/DI/test.php)
-* [Ioc控制反转容器](https://github.com/bluesaka/code/blob/master/php/DI/test2.php)
+* [Ioc控制反转](https://github.com/bluesaka/code/blob/master/php/DI/test2.php)
 * [Session](https://github.com/bluesaka/code/blob/master/php/session)
     - [file存储](https://github.com/bluesaka/code/blob/master/php/session/session_file.md)
     - [redis存储](https://github.com/bluesaka/code/blob/master/php/session/test.php)
     - [redis session](https://github.com/bluesaka/code/blob/master/php/session/test2.php)
     - [session with cookie disabled](https://github.com/bluesaka/code/blob/master/php/session/cookie_disabled.md)
 
-* [composer](https://github.com/bluesaka/code/blob/master/php/base/composer.md)
+* [PHP扩展开发](https://github.com/bluesaka/code/blob/master/php/base/extension.md)
+
 * 基础
     - [数据类型](http://php.net/manual/zh/language.types.php)
     - [array函数](http://php.net/manual/zh/ref.array.php)
     - [date函数](http://php.net/manual/zh/function.date.php)
     - [类型比较](http://php.net/manual/zh/types.comparisons.php)
     - [运算符优先级](http://php.net/manual/zh/language.operators.precedence.php)
+    * [json](https://github.com/bluesaka/code/blob/master/php/base/json.md)
+    * [composer](https://github.com/bluesaka/code/blob/master/php/base/composer.md)
+
 * PHP版本
     - [7.1](http://php.net/manual/zh/migration71.new-features.php)
     - [7.0](http://php.net/manual/zh/migration70.new-features.php)
@@ -102,3 +106,19 @@
 * [权限](https://github.com/bluesaka/code/blob/master/linux/permission.md)
 * [ssh key](https://github.com/bluesaka/code/blob/master/linux/ssh_key.md)
 * [mount挂载](https://github.com/bluesaka/code/blob/master/linux/mount.md)
+
+--------------------------------
+
+# 其他
+
+* [git](https://github.com/bluesaka/code/blob/master/skill/git.md)
+
+--------------------------------
+
+
+# 算法
+
+* [排序算法](https://github.com/bluesaka/code/blob/master/algorithm/sort)
+
+* [LeetCode](https://github.com/bluesaka/code/blob/master/algorithm/leetcode)
+    - [数字字典排序](https://github.com/bluesaka/code/blob/master/algorithm/leetcode/数字字典排序.md)
