@@ -49,6 +49,10 @@
 > 多匹配两行  ps aux | grep 9501 -2
 > 总数  ps -ef | grep 9501 | wc -l
 
+# ssh
+> ssh 192.168.1.222
+> ssh root@192.168.1.222
+
 # 监测
 > telnet 127.0.0.1 9501
 > netcat -u 127.0.0.1 9501   -u:udp, 默认tcp
