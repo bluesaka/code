@@ -73,6 +73,16 @@ replace into t3(id,name) VALUES (1,'kk');
 // unique key `uk_name_class` (`name`, `class`),  (name, class)是组合唯一索引，此情况AUTO_INCREMENT +1
 insert into t2(name,class,count) values('test', 1, 3) on duplicate key update count = VALUES(count);
 replace into t2(name,class,count) values('test', 1, 3);
+
+// multi
+# unique key(uuid)
+insert into t (uuid, name) VALUES
+(1, 'aa'),
+(2, 'bb'),
+(4, 'c')
+on DUPLICATE key update name = VALUES(name);
+
+replace into t select * from t_temp;
 ```
 
 # if
