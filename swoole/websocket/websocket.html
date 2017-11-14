@@ -1,20 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket</title>
+</head>
+<body>
+
+用户：<input id="login-uid">
+<button id="btn-login">登录</button> <br/><br/>
+
+<hr>
+
+用户：<input id="to-uid">
+内容：<textarea id="msg-content"></textarea><br/><br/>
+<button id="btn-msg">发送消息</button><br/>
+
+<script src="jquery-1.9.1.min.js"></script>
+
+
 <script>
-    var sock = new WebSocket('ws://127.0.0.1:9501');
-
-    sock.onopen = function(event) {
-        sock.send(JSON.stringify('{"type":"login","tid":8301}'));
+    var socket = new WebSocket('ws://172.16.10.130:9501');
+    socket.onopen = function(e) {
+        socket.send('{"type":"open", "message":"hello，这是来自客户端的消息"}');
     };
 
-    sock.onmessage = function(event) {
-        console.log(event.data)
+    socket.onmessage = function(e) {
+        console.log(e.data);
+//        var data = JSON.parse(e.data);
+//        if (data.type === 'msg') {
+//            alert("发送人：" + data.from_uid + "， 内容：" + data.content);
+//        }
     };
 
-    sock.onclose = function(e) {
+    socket.onclose = function(e) {
         console.log('ws close', e);
     };
-    sock.onerror = function(err) {
+
+    socket.onerror = function(err) {
         console.error('error: ', err.message, 'Closing socket');
-        sock.close();
+        socket.close();
     };
+</script>
+
+<script>
+    $('#btn-login').click(function() {
+        socket.send('{"type":"login", "uid":' +$('#login-uid').val()+'}');
+        $(document).attr('title', 'WebSocket -- uid:' + $('#login-uid').val());
+        /*$.ajax({
+            url: 'login.php',
+            type: 'post',
+            data: {"uid":$('#login-uid').val()},
+            success: function() {
+                $(document).attr('title', 'WebSocket -- uid:' + $('#login-uid').val());
+            }
+        });*/
+    });
+
+    $('#btn-msg').click(function() {
+        $.ajax({
+            url: 'message.php',
+            type: 'post',
+            data: {
+                "from_uid":$('#login-uid').val(),
+                "to_uid":$('#to-uid').val(),
+                "content": $('#msg-content').val()
+            }
+        });
+    });
 
 </script>
+
+</body>
+</html>
