@@ -101,11 +101,11 @@ GET thl_set_meals/thl_set_meals/_search?explain
               "distance_type": "plane"
             }
         },
-{
-    "id": {
-"order": "desc"
-    }
-}
+        {
+            "id": {
+                "order": "desc"
+             }
+        }
     ],
     "highlight": {"fields": {"match_*": {"type": "plain"}}} 
   }
