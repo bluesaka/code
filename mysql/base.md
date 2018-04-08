@@ -12,6 +12,21 @@ mysql -h 127.0.0.1 -P 3306 -u root -pxxx （密码紧跟-p, 或者密码不写�
                        2. select * from table order by CAST(xx2 AS DECIMAL) | CONVERT(xx2, DECIMAL);  // CAST, CONVERT 转换类型
 ```
 
+# order by 排序随机问题
+```
+order by排序是不稳定的
+select id from xx where status = 1 order by weight desc limit 0, 20
+加上id排序确保排序一致
+select id from xx where status = 1 order by weight desc, id desc limit 0, 20
+```
+
+# in 索引命中问题
+```
+explain select id from xx where id in (1, '2')  --> 无法命中id索引
+explain select id from xx where id in (1, 2)  --> 可以命中id索引
+explain select id from xx where id in ('1', '2')  --> 可以命中id索引
+```
+
 # group by
 
 ```
