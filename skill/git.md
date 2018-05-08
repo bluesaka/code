@@ -5,6 +5,8 @@
 git config --global user.name "Felix"
 git config --global user.emal "felix@vm.com"
 git config --list | -l
+git config pull.rebase false
+git config core.fscache false  //true需要discard两次
 ```
 
 ## ssh key
@@ -105,4 +107,12 @@ git rebase --continue | --skip | --abort | --edit-todo
 开发分支rebase: git fetch origin -> git rebase origin/master (-> 解决冲突 -> git add(no commit) -> git rebase --continue)  -> git push origin hotfix_xx -f (若不加-f，远程最新节点不一致，推不了)
 线上分支merge: git fetch origin  -> git merge (--no-ff: 推荐，会有个merge的点) origin/hotfix-xx  -> git push origin master
 --no-ff:no fast-foward， fast-forward是git直接把HEAD指针指向合并分支的头，完成合并。属于“快进方式”，不过这种情况如果删除分支，则会丢失分支信息。因为在这个过程中没有创建commit
+```
+
+## squash
+```
+将多个提交合并成一个
+1. git rebase -i HEAD~8
+2. 将除一个之外的pick改为s
+3. git push origin dev -f 
 ```
