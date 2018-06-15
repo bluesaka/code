@@ -38,7 +38,7 @@ _search?explain
 GET /hl_shop_product/_analyze {
     "field": "match_*",
     "text":"敬酒服",
-    "analyzer": "ik_max_word"
+    // "analyzer": "ik_max_word"   此参数没用， 跟着mapping走
 } 
 ```
 
