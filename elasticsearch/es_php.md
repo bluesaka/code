@@ -36,9 +36,14 @@ _search?explain
 # 分词调试
 ```
 GET /hl_shop_product/_analyze {
-    "field": "match_*",
+    "field": "match_name",
     "text":"敬酒服",
     // "analyzer": "ik_max_word"   此参数没用， 跟着mapping走
+} 
+
+GET /hl_shop_product/_analyze {
+    "text":"敬酒服",
+    "analyzer": "ik_max_word"
 } 
 ```
 
