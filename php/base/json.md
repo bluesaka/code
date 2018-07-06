@@ -48,15 +48,42 @@ var jsonObj = JSON.parse(jsonStr);
 var jsonStr = JSON.stringify(jsonObj);
 
 # 与后端数据交互
-// html
-var jsonObj = {"a":"v1", "b":"v2"};
-jsonObj = JSON.stringify(jsonObj);
+// js
+var jsonObj = {"a":"{\"status\": 2}", "b":"v2"};
+
 $.ajax({
     url: 'xxx'
-    data: {"data":jsonObj},
+    data: jsonObj, // json字符串为 JSON.stringify(jsonObj)
+    contentType: "application/json", // 默认是application/x-www-form-urlencoded
 });
+
 // php
-// 1. 不加stringify处理，直接传json对象的话，会被处理为数组 (z[a]:v1  z[b]:v2)
-// 2. 加stringify转换成json字符串 '{"a":"v1", "b":"v2"}'
-json_decode($_REQUEST['data'], true) 得到数组
+1. application/json
+   data: JSON.stringify(jsonObj)
+   传参形式： Request Payload
+   接收参数：json_decode(file_get_contents('php://input'), true);
+   
+2. application/x-www-form-urlencoded
+   传参形式：Form Data
+   接收参数：$_POST
+ 
+3. 使用DHC/postman请求时:
+   - application/json
+        {
+            "a":"{\"status\": 1}",
+            "b":"v2"
+        }
+        接收参数：json_decode(file_get_contents('php://input'), true)
+        
+   - application/x-www-form-urlencoded
+        {
+            "a":"{\"status\": 1}",
+            "b":"v2"
+        }
+        接收参数：json_decode(file_get_contents('php://input'), true)
+        
+    - application/x-www-form-urlencoded
+        a={"status":1}&b=v2
+        接收参数：$_POST
+
 ```
