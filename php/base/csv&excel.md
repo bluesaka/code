@@ -1,0 +1,51 @@
+# CSV读取
+
+```
+$fp = fopen('xxx.csv', 'r'); //文件名最好不要有中文，不然要额外处理
+if (!$fp) return false;
+
+$data = [];
+while ($item = fgetcsv($fp, 10000)) {
+    $data[] = [
+        'name' => iconv('utf-8', 'gbk', $item[2]), //中文转码
+        'age' => $item[3],
+    ];
+}
+fclose($fp);
+```
+
+# CSV保存
+
+```
+$fp = fopen('xxx.csv', 'w');
+$data = [
+  ['a', 1],
+  ['b', 2],
+];
+
+foreach ($data as $item) {
+    foreach ($item as &$v) $v = iconv('utf-b', 'gbk', $v); //中文转码
+    fputcsv($fp, $item);
+}
+
+fclose($fp);
+```
+
+# excel - PhpSpreadsheet
+
+```
+phpexcel已不再维护，使用phpspreadsheet
+composer require phpoffice/phpspreadsheet
+
+$spreadsheet = new Spreadsheet();
+$sheet = $spreadsheet->getActiveSheet();
+$sheet->setCellValue('A1', 'hello world');
+
+$writer = new Xlsx($spreadsheet);
+// $writer->save('1.xlsx');
+
+header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+header('Content-Disposition: attachment; filename="2.xlsx"');
+header('Cache-Control: max-age=0');
+$writer->save('php://output');
+```
