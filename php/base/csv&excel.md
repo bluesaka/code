@@ -1,6 +1,6 @@
 # CSV读取
 
-```
+```php
 $fp = fopen('xxx.csv', 'r'); //文件名最好不要有中文，不然要额外处理
 if (!$fp) return false;
 
@@ -16,7 +16,7 @@ fclose($fp);
 
 # CSV保存
 
-```
+```php
 $fp = fopen('xxx.csv', 'w');
 $data = [
   ['a', 1],
@@ -33,9 +33,9 @@ fclose($fp);
 
 # excel - PhpSpreadsheet
 
-```
-phpexcel已不再维护，使用phpspreadsheet
-composer require phpoffice/phpspreadsheet
+```php
+// phpexcel已不再维护，使用phpspreadsheet
+// composer require phpoffice/phpspreadsheet
 
 $spreadsheet = new Spreadsheet();
 $sheet = $spreadsheet->getActiveSheet();
