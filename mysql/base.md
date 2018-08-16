@@ -9,10 +9,10 @@ mysql -h 127.0.0.1 -P 3306 -u root -pxxx （密码紧跟-p, 或者密码不写�
 1. 通道直连
   a. mysql连接配置相应的ssh通道即可
     
-2. 本地连接通道
-  a. ssh -fNg -p {ssh_port} -L{local_port}:{db_host}:{db_port} {ssh_user}@{ssh_host}  本地端口连接ssh通道
-  b. 新建mysql连接 localhost:{local_port} {db_user} {db_password}  此连接无需设置ssh通道，用户密码用远程服务器的
-  c. mysql命令行连接 mysql -h 127.0.0.1 -P {local_port} -u {db_user} -p{db_password}
+2. ssh本地端口转发
+  a. ssh -fNg -p <ssh_port> -L<local_port>:<db_host>:<db_port> <ssh_user>@<ssh_host>  本地端口连接ssh通道
+  b. 新建mysql连接 localhost:<local_port> <db_user> <db_password>  此连接无需设置ssh通道，用户密码用远程服务器的
+  c. mysql命令行连接 mysql -h 127.0.0.1 -P <local_port> -u <db_user> -p<db_password>
 ```
 
 # order by
