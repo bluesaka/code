@@ -7,7 +7,7 @@ mysql -h 127.0.0.1 -P 3306 -u root -pxxx （密码紧跟-p, 或者密码不写�
 # ssh通道连接数据库
 ```
 1. 通道直连
-  mysql配置响应的ssh通道即可
+  a. mysql连接配置相应的ssh通道即可
     
 2. 本地连接通道
   a. ssh -fNg -p {ssh_port} -L{local_port}:{db_host}:{db_port} {ssh_user}@{ssh_host}  本地端口连接ssh通道
