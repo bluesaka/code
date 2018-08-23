@@ -85,5 +85,16 @@ $.ajax({
     - application/x-www-form-urlencoded
         a={"status":1}&b=v2
         接收参数：$_POST
+        
+4. curl默认Content-Type: multipart/form-data
+   - json_encode($arr)
+     {
+         "name": "a"
+     }
+     接收参数：json_decode(file_get_contents('php://input'), true)
+     
+   - form data
+     name=a&age=18
+     接收参数：$_POST
 
 ```
