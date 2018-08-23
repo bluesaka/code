@@ -49,3 +49,8 @@ header('Content-Disposition: attachment; filename="2.xlsx"');
 header('Cache-Control: max-age=0');
 $writer->save('php://output');
 ```
+
+# excel转csv，身份证信息编程科学计数法解决
+```
+csv文件用文本打开，在身份证后面加上空格(\t，正则替换\r\n -> \t\r\n)，然后打开就正常了
+```
