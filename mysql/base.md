@@ -133,8 +133,21 @@ END AS sex
 FROM Student
 ```
 
-# timestamp字段
+# datetime, timestamp
 
 ```
-`operate_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '操作时间'
+`operate_time` datetime/timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '操作时间'
+```
+
+# MySQL 到 PHP 数据类型的转换关系
+```
+    MySQL	                                                  PHP
+FLOAT, DOUBLE	                                            double(float)
+INTEGER, INT, SMALLINT, TINYINT, MEDIUMINT	              int
+DECIMAL, NUMERIC	                                        string
+BIGINT (在操作系统int范围内是int，超过范围后是string)	       int | string
+other	                                                    string
+
+设置此参数,解决mysql数据取出时,int/float类型变成string类型的问题
+MYSQLI_OPT_INT_AND_FLOAT_NATIVE = true
 ```
