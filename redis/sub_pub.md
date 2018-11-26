@@ -24,8 +24,8 @@ $redis->psubscribe(['__keyevent@0__:expired'], 'myCallback');
 function myCallback($redis, $pattern, $chan, $msg)
 {
     // object(Redis)  "__keyevent@0__:expired"  "__keyevent@0__:expired"  "name"
-    // var_dump($redis, $pattern, $chan, $msg);
-    exec("echo 1 >> /var/log/redis_test.log");
+    var_dump($redis, $pattern, $chan, $msg);
+    exec("echo 1 >> /var/log/redis/redis_test.log");
 }
 ```
 启动进程：php psubscribe.php &
