@@ -21,8 +21,10 @@ $redis = new Redis();
 $redis->connect('127.0.0.1', 6379); // do not set timeout
 $redis->psubscribe(['__keyevent@0__:expired'], 'myCallback');
 
-function myCallback()
+function myCallback($redis, $pattern, $chan, $msg)
 {
+    // object(Redis)  "__keyevent@0__:expired"  "__keyevent@0__:expired"  "name"
+    // var_dump($redis, $pattern, $chan, $msg);
     exec("echo 1 >> /var/log/redis_test.log");
 }
 ```
