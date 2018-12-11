@@ -70,7 +70,7 @@ select * from table find_in_set(2, type);
 ```
 // sid相同，create_time不同，取create_time最后一条
 1. SELECT id, sid FROM table_name a WHERE NOT EXISTS (SELECT 1 FROM table_name where a.sid = sid AND a.create_time < create_time);
-2. SELECT id, sid FROM table_name WHERE create_time IN (SELECT max(create_time) FROM table_name group by sid);
+2. SELECT id, sid FROM table_name WHERE id IN (SELECT max(id) FROM table_name group by sid);
 3. SELECT id, sid, max(create_time), count(*) FROM table_name group by sid
 ```
 
