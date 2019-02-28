@@ -116,3 +116,12 @@ git rebase --continue | --skip | --abort | --edit-todo
 2. 将除一个之外的pick改为s
 3. git push origin dev -f 
 ```
+
+## log
+```
+git log -- filename
+git log -p -2 -- filename    指定文件近两次的修改
+git log -L 200:filename      指定文件第200行的修改记录
+git log -L 200,220:filename  指定文件第200-220行的修改记录
+git log -L 200:filename | grep -Ec "commit [0-9a-fA-F]{40}" 指定文件200行的修改次数  -E扩展正则 -c个数
+```
