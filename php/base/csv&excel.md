@@ -24,7 +24,7 @@ $data = [
 ];
 
 foreach ($data as $item) {
-    foreach ($item as &$v) $v = iconv('utf-b', 'gbk', $v); //中文转码
+    foreach ($item as &$v) $v = iconv('utf-8', 'gbk', $v); //中文转码
     fputcsv($fp, $item);
 }
 
