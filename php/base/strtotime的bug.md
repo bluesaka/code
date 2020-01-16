@@ -6,7 +6,7 @@ echo date('Y-m-d', strtotime('+1 month', strtotime('2018-08-31'))); // 输出201
 date内部逻辑：
 1. 先处理-1 month，07-31  ->  06-31
 2. 日期规范化  06-31  ->   07-01  
-   date('Y-m-d', strtotime(2018-06-31')）  ->  2018-07-01
+   date('Y-m-d', strtotime(2018-06-31'))  ->  2018-07-01
    
 解决方案：
 1. php5.3+
