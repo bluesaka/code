@@ -523,3 +523,53 @@ GET an_index/_search
 ```
 es head包 或者 下载chrome插件
 ```
+
+# 多标签搜索
+```
+# 添加数据
+POST tag_test/_bulk
+{ "index": { "_id": 1 }}
+{ "tag_id" : [1,3] }
+{ "index": { "_id": 2 }}
+{ "tag_id" : [11,2] }
+{ "index": { "_id": 3 }}
+{ "tag_id" : [22,4] }
+
+# 查看mapping，tag_id.type=long
+GET tag_test/_mapping
+
+# 查询，tag_id in (1,2)
+GET tag_test/_search
+{
+  "query": {
+    "terms": {
+      "tag_id": [1,2]
+    }
+  }
+}
+
+# 查询，tag_id同时包含1和2
+GET tag_test/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "tag_id": {
+              "value": "1"
+            }
+          }
+        },
+        {
+          "term": {
+            "tag_id": {
+              "value": "2"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+```
