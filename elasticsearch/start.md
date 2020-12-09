@@ -573,3 +573,77 @@ GET tag_test/_search
   }
 }
 ```
+
+# 自定义逗号分词器搜索
+```
+# 设置index
+PUT tag_test2
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "my_comma": {
+          "type":"pattern",
+          "pattern": ","
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "tag_id":{
+        "type": "text",
+        "analyzer": "my_comma",
+        "search_analyzer": "my_comma",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      }
+    }
+  }
+}
+
+# 添加数据
+POST tag_test2/_bulk
+{ "index": { "_id": 1 }}
+{ "tag_id" : "1,2" }
+{ "index": { "_id": 2 }}
+{ "tag_id" : "11,2" }
+{ "index": { "_id": 3 }}
+{ "tag_id" : "22,4" }
+{ "index": { "_id": 4 }}
+{ "tag_id" : "1,22" }
+
+# 分析
+GET tag_test2/_analyze
+{
+  "field": "tag_id",
+  "text": "1,22",
+  "analyzer": "my_comma"
+}
+
+# 查询
+GET tag_test2/_search
+{
+  "query": {
+    "terms": {
+      "tag_id": [1]
+    }
+  }
+}
+
+GET tag_test2/_search
+{
+  "query": {
+    "match": {
+      "tag_id": {
+        "query": "1",
+        "analyzer": "my_comma"
+      }
+    }
+  }
+}
+```
